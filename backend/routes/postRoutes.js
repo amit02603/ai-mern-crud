@@ -10,6 +10,8 @@ router.post("/", async (req, res) => {
     const savedPost = await newPost.save();
     res.status(201).json(savedPost);
   } catch (err) {
+    console.log("Incoming data:", req.body);
+
     res.status(500).json({ error: err.message });
   }
 });
